@@ -1,3 +1,5 @@
+import BlackJack.node;
+
 public class Queue{ //last in first out
     node tail;
     node head;

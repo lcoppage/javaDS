@@ -1,27 +1,27 @@
 public class doubleLinkedList {
     node head; // starting node of linked list
-    node tail;
+    node tail; //end node of the linked list
          doubleLinkedList(){
             head = new node();
             tail = head;
         }
 
         void printItems(){
-            node current = tail;
+            node current = head;
             while(current!= null){
                 System.out.println(current.data);
-                current = current.prev;
+                current = current.next;
             }
         }
 //adds new node to end of the linked list. 
         void add(Object data){
-            if(tail==head && head.data==null){
+            if(tail == head){
                 head.data = data;
             }
             else{
-                tail.next = new node(data);
-                tail.next.prev = tail;
-                tail = tail.next;
+            tail.next = new node(data);
+            tail.prev = tail;
+            tail = tail.next;
             }
     }
 
@@ -47,14 +47,6 @@ public class doubleLinkedList {
             if(!found){
             System.out.print("could not find"  + data);
         }}
-
-        void printReverse(Object data){
-            node current = tail;
-            while(current != null){
-                System.out.println(current.data);
-                current = current.prev;
-            }
-        }
 
 }
 

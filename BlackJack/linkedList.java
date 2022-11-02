@@ -1,3 +1,4 @@
+
 public class linkedList {
     node head; // starting node of linked list
 
@@ -12,6 +13,8 @@ public class linkedList {
                 current = current.next;
             }
         }
+
+
         //adds new node to end of the linked list. 
         void add(Object data){
             node current = head;
@@ -19,7 +22,6 @@ public class linkedList {
           while(current.next != null){
             current = current.next;
         }
-
         if(current.data == null){
             current.data = data;
         }
@@ -47,13 +49,6 @@ public class linkedList {
                 System.out.println(head.data);
             }
         }*/
-
-
-
-
-
-       
-       
        node current = head;
         int index = 0;
         while (current.next != null){
@@ -68,9 +63,6 @@ public class linkedList {
             System.out.println(current.data);
         }
     } 
-    
-
-
         void remove(Object data){
             node current = head;
             node last = head;
@@ -94,7 +86,7 @@ public class linkedList {
             System.out.print("could not find"  + data);
         }
     }
-        node getAtIndex(int index){
+        Object getAtIndex(int index){
             int i = 0;
             node current = head;
             while(i<index){
@@ -107,6 +99,21 @@ public class linkedList {
                 }
             }
             return current;
+        }   
+
+        Object getDataAt(int index){
+            int i = 0;
+            node current = head;
+            while(i<index){
+                if(current == null){
+                    return null;
+                }
+                else{
+                    current = current.next;
+                    i++;  
+                }
+            }
+            return current.data;
         }   
 
         int getIndexOf(Object data){
@@ -122,6 +129,15 @@ public class linkedList {
             return i;
             
         }
+        int length() {
+            node current = head;
+            int len = 0;
+            while(current != null){
+                current = current.next;
+                len++;
+            }
+            return len;
+        }   
 }
 
 
